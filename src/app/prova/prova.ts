@@ -16,6 +16,7 @@ export class Prova implements OnInit {
   immagine = ""
   immagine1 = "https://c4.wallpaperflare.com/wallpaper/586/603/742/minimalism-4k-for-mac-desktop-wallpaper-preview.jpg"
   immagine2 = "https://www.skyweaver.net/images/media/wallpapers/wallpaper2.jpg"
+
   cani = [
     { nome: "roger", razza: "golden retriver", descrizione: "Bellissimo cane biondissimo" },
     { nome: "socio", razza: "non sono un cane", descrizione: "mannaia" },
@@ -27,7 +28,6 @@ export class Prova implements OnInit {
   }
  
   ngOnInit(): void {
-    let counter = 0
     console.log("ngOnInit");
   }
 }

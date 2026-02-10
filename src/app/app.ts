@@ -5,7 +5,7 @@ import { Ciao } from './ciao/ciao';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Prova],
+  imports: [Prova, Ciao],
   templateUrl: './app.html',
   styleUrls: ['./app.css']  
 })
