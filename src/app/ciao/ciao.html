@@ -13,3 +13,19 @@
         <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
     </mat-form-field>
 </form>
+
+@if (isVisible) {
+    <div>Sono un div</div>
+} @else {
+    <div>sono il div else</div>
+}
+<ul>
+    @for (persona of persone; track $index) {
+    <li><strong>{{persona.nome.toUpperCase()}} </strong> {{persona.cognome}} ha {{persona.eta}} anni</li>
+    @if (persona.isOnline) {
+        <p>Sono Online</p>
+    } @else {
+        <p>Sono Offline</p>
+    }
+}
+</ul>
