@@ -21,11 +21,26 @@
 }
 <ul>
     @for (persona of persone; track $index) {
-    <li><strong>{{persona.nome.toUpperCase()}} </strong> {{persona.cognome}} ha {{persona.eta}} anni</li>
-    @if (persona.isOnline) {
-        <p>Sono Online</p>
-    } @else {
-        <p>Sono Offline</p>
-    }
+    
+    <li><div [ngClass]="{cerchioOnline: persona.isOnline, cerchioOffline: !persona.isOnline}"></div>
+        <strong>{{persona.nome.toUpperCase()}} </strong> {{persona.cognome}} ha {{persona.eta}} anni</li>
 }
 </ul>
+
+@switch (testo) {
+    @case ("ciao") {
+        <p>Numero 4</p>
+    }
+    @case ("ciaooo") {
+        <p>Numero 5</p>
+    }
+    @case ("cia") {
+        <p>Numero 6</p>
+    }
+    @default {
+        <p>default</p>
+    }
+}
+<div>{{persone[0].nome}}</div>
+
+<app-child [data]="persone"></app-child>

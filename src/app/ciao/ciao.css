@@ -9,14 +9,28 @@
 }
 
 .cerchioOnline{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 15px;
+  height: 15px;
   background-color: green;
 }
 .cerchioOffline{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 15px;
+  height: 15px;
   background-color: red;
+}
+.cerchio{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: blue;
+}
+li{
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.ball{
+  border-radius: 50%;
+  margin: 10px;
+  background-color: blue;
 }

@@ -1,0 +1,7 @@
+<p>child works!</p>
+<div>
+    @for (persona of data; track $index) {
+        <p [ngStyle]="{color: persona.colore}">{{persona.nome}} {{persona.eta}}</p>
+    }
+</div>
+
