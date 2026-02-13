@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, AfterViewInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -12,7 +12,7 @@ import { Child } from '../ciao/child/child';
   templateUrl: './ciao.html',
   styleUrls: ['./ciao.css'],
 })
-export class Ciao {
+export class Ciao implements OnInit, AfterViewInit{
   title = "Esercizi Angular";
 
   persone = [
@@ -33,5 +33,19 @@ export class Ciao {
   onClick(event: Event) {
     this.title = "Ho cliccato sul bottone"
     console.log("ho cliccato")
+  }
+  @ViewChild("inputSaluti") valoreInput!: ElementRef<HTMLInputElement>
+
+  ngOnInit(): void{
+    console.log("ngOnInit")
+    console.log(this.valoreInput)
+  }
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit")
+    console.log(this.valoreInput)
+
+  }
+  onClickInput() {
+    console.log(this.valoreInput.nativeElement.value)
   }
 }

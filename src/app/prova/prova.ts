@@ -1,17 +1,18 @@
-import {Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { Highlight } from "../directive/highlight/highlight";
 
 
 @Component({
   selector: 'app-prova',
   standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatSlideToggleModule],
+  imports: [MatButtonModule, MatCardModule, MatSlideToggleModule, Highlight],
   templateUrl: './prova.html',
   styleUrls: ['./prova.css']
 })
-export class Prova implements OnInit {
+export class Prova implements OnInit, AfterViewInit {
   
   isDisabled = true
   immagine = ""
@@ -30,5 +31,9 @@ export class Prova implements OnInit {
  
   ngOnInit(): void {
     console.log("ngOnInit");
+  }
+  @ViewChild("inputValore") inputValore!: ElementRef<HTMLInputElement>
+  ngAfterViewInit(): void {
+    console.log(this.inputValore.nativeElement.value)
   }
 }
