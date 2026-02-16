@@ -4,4 +4,6 @@
         <p [ngStyle]="{color: persona.colore}">{{persona.nome}} {{persona.eta}}</p>
     }
 </div>
-
+<h2>Ciao oggi è {{oggi | date:'d/MMM/yyyy h:mm:ss'}}</h2>
+<h2>Il peso è {{numero | number: '1.2-4'}}kg</h2>
+<h2>Quanti soldi hai?? {{numero | currency: 'EUR' }}</h2>
