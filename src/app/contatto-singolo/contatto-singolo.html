@@ -1,0 +1,10 @@
+<h2>Profilo Di {{persona.nome}} {{persona.cognome}}</h2>
+<p>Età: {{persona.eta}}</p>
+<p>Il suo colore preferito è {{persona.colore}}</p>
+<p>In Questo momento è
+    @if (persona.isOnline) {
+        Online ✅
+    } @else {
+        Offline ❌
+    }
+</p>

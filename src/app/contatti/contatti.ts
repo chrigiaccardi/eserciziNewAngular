@@ -1,10 +1,11 @@
 import { Component,OnInit } from '@angular/core';
 import { ServizioProva } from '../service/servizio-prova';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ContattoSingolo } from '../contatto-singolo/contatto-singolo';
 
 @Component({
   selector: 'app-contatti',
-  imports: [RouterLink],
+  imports: [RouterLink, ContattoSingolo],
   templateUrl: './contatti.html',
   styleUrl: './contatti.css',
 })

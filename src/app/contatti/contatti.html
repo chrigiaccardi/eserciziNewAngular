@@ -1,9 +1,11 @@
 <div>
-    @if (!isProfile) {<h2>Lista Contatti</h2>
-<div>
-    @for (persona of persone; track $index; let i = $index) {
-    <a [routerLink]="['/Contatti', i]"><div style="margin: 10px;"><strong>{{persona.nome.toUpperCase()}} </strong> {{persona.cognome}}</div></a>
+    @if (!isProfile) {
+    <h2>Lista Contatti</h2>
+    <div>
+     @for (persona of persone; track $index; let i = $index) {
+        <a [routerLink]="['/Contatti', i]"><div style="margin: 10px;"><strong>{{persona.nome.toUpperCase()}} </strong> {{persona.cognome}}</div></a>
+        } 
+    </div>
+} @else {
+    <app-contatto-singolo></app-contatto-singolo>
 }
-</div>} @else {
-    <p>Profili Di {{persona.nome}} {{persona.cognome}}</p>}
-</div>
