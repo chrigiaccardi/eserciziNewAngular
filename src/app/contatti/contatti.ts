@@ -1,27 +1,22 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServizioProva } from '../service/servizio-prova';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ContattoSingolo } from '../contatto-singolo/contatto-singolo';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatDividerModule } from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+
 
 @Component({
   selector: 'app-contatti',
-  imports: [RouterLink, ContattoSingolo],
+  imports: [RouterOutlet,MatDividerModule,MatListModule, RouterLink],
   templateUrl: './contatti.html',
   styleUrl: './contatti.css',
 })
-export class Contatti {
+export class Contatti implements OnInit{
   persone: any;
-  persona: any;
-  isProfile: boolean = false;
-  constructor(private servizioProva: ServizioProva, private route:ActivatedRoute) {
-  }
+
+  constructor(private servizioProva: ServizioProva) { }
+  
   ngOnInit(): void{
-    if (this.route.snapshot.paramMap.get('id')) {
-      this.isProfile = true
-       this.persona = this.servizioProva.getPersona(parseInt(this.route.snapshot.paramMap.get('id')!));
-    } else {
-      this.isProfile = false
-      this.persone = this.servizioProva.getPersone();
-    }
+  this.persone = this.servizioProva.getPersone();
   }
 }
