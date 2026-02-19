@@ -12,7 +12,7 @@ import { RouterOutlet, RouterLinkWithHref} from '@angular/router';
 export class App implements OnInit{
   constructor(private servizioProva: ServizioProva){}
   ngOnInit(): void {
-  console.log("Qui siamo in app per il nome", this.servizioProva.persone[3].nome)
+    console.log("Qui siamo in app per il nome", this.servizioProva.persone[3].nome)
   }
   title = 'esercizi-angular';
  
