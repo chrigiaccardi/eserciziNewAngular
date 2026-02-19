@@ -2,7 +2,7 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, viewChild } fro
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { Highlight } from "../directive/highlight/highlight";
+import { Highlight } from "../../directive/highlight/highlight";
 
 
 @Component({

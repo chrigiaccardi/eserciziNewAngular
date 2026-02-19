@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServizioProva } from '../service/servizio-prova';
+import { ServizioProva } from '../../service/servizio-prova';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
 

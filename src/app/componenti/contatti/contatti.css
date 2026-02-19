@@ -1,0 +1,11 @@
+mat-list-item{
+    margin: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.contatti{
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+}

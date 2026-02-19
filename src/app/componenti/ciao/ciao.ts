@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { NgStyle, NgClass } from '@angular/common';
 import { Child } from '../ciao/child/child';
-import { ServizioProva } from '../service/servizio-prova';
+import { ServizioProva } from '../../service/servizio-prova';
 
 @Component({
   selector: 'app-ciao',
