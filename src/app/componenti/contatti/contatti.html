@@ -1,10 +1,10 @@
 <h2>Lista Contatti</h2>
 <div class="contatti">
     <mat-list>
-        @for (persona of persone; track $index; let i = $index) {
+        @for (persona of persone; track $index;) {
         <mat-list-item>
             <mat-card>
-                <a [routerLink]="['/Contatti', i]">
+                <a [routerLink]="[persona.id]">
                     <div style="margin: 10px;"><strong>{{persona.nome.toUpperCase()}} </strong> {{persona.cognome}}
                     </div>
                 </a>

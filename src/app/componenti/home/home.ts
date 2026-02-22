@@ -5,6 +5,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Firebase } from '../../service/firebase';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +15,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class Home implements OnInit{
   formreactive!: FormGroup
-  
+  constructor(private firebase: Firebase) { }
   ngOnInit(): void {
     this.formreactive = new FormGroup({
-      nome: new FormControl(null,Validators.required),
+      nome: new FormControl(null, Validators.required),
       cognome: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
       colore: new FormControl(),
-      })
+    });
+   console.log(this.firebase.urlPersoneJson)
+  
   }
   
 
@@ -30,5 +33,21 @@ export class Home implements OnInit{
   }
   onSubmitR() {
     console.log(this.formreactive)
+    this.firebase.insertPersona(this.firebase.urlPersoneJson,
+      {
+        nome: this.formreactive.value.nome,
+        cognome: this.formreactive.value.cognome,
+        email: this.formreactive.value.email,
+        colore: this.formreactive.value.colore,
+      }
+    ).subscribe(data => {
+      console.log(data)
+    });
+  }
+
+  onDeletePersona() {
+    this.firebase.deletePersona(this.firebase.urlPersoneJson,'-Om4rmsgEhCaoWQAvHKa').subscribe(data => {
+      console.log(data)
+    })
   }
 }

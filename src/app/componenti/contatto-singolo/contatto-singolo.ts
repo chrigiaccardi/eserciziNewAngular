@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ServizioProva } from '../../service/servizio-prova';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
+import { ArrayPersone } from '../../service/array-persone';
 
 @Component({
   selector: 'app-contatto-singolo',
@@ -10,14 +10,15 @@ import {MatCardModule} from '@angular/material/card';
   styleUrl: './contatto-singolo.css',
 })
 export class ContattoSingolo implements OnInit{
-  id!: number;
+  id!: string;
   personaSingola: any;
-   constructor(private servizioProva: ServizioProva, private route:ActivatedRoute) {
+   constructor(private route:ActivatedRoute, private arrayPersone: ArrayPersone) {
    }
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
-      this.id = +params.get('id')!
-      this.personaSingola = this.servizioProva.getPersona(this.id)
+      this.id = params.get('id')!
+      this.personaSingola = this.arrayPersone.persone.find(persona => persona.id === this.id)
+      console.log(this.personaSingola)
     })
   }
 }
