@@ -14,7 +14,7 @@ import { ArrayPersone } from '../../service/array-persone';
   styleUrl: './contatti.css',
 })
 export class Contatti implements OnInit{
-  persone: any;
+  persone: any[] = []
   
   constructor(private firebase: Firebase, private arrayPersone: ArrayPersone) { }
   

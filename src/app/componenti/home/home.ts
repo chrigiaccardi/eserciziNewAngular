@@ -23,8 +23,6 @@ export class Home implements OnInit{
       email: new FormControl(null, [Validators.required, Validators.email]),
       colore: new FormControl(),
     });
-   console.log(this.firebase.urlPersoneJson)
-  
   }
   
 
@@ -43,11 +41,5 @@ export class Home implements OnInit{
     ).subscribe(data => {
       console.log(data)
     });
-  }
-
-  onDeletePersona() {
-    this.firebase.deletePersona(this.firebase.urlPersoneJson,'-Om4rmsgEhCaoWQAvHKa').subscribe(data => {
-      console.log(data)
-    })
   }
 }

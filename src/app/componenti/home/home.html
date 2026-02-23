@@ -1,29 +1,3 @@
-<form #homeform="ngForm" (ngSubmit)="onSubmit(homeform)">
-    <mat-form-field>
-        <mat-label>Nome</mat-label>
-        <input matInput type="text" name="nome" ngModel required>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Cognome</mat-label>
-        <input matInput type="text" name="cognome" ngModel required>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput type="email" name="email" ngModel required email>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Colore</mat-label>
-        <mat-select name="colore" ngModel>
-            <mat-option value="rosso">Rosso</mat-option>
-            <mat-option value="giallo">Giallo</mat-option>
-            <mat-option value="verde">Verde</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <button matButton="filled" type="submit" [disabled]="!homeform.valid">Invia</button>
-</form>
-
-<hr>
-
 <form [formGroup]="formreactive" (ngSubmit)="onSubmitR()">
     <mat-form-field>
         <mat-label>Nome</mat-label>
@@ -50,4 +24,4 @@
     </mat-form-field>
     <button matButton="filled" type="submit" [disabled]="!formreactive.valid">Invia</button>
 </form>
-    <button matButton="filled" (click)="onDeletePersona()">Elimina Utente</button>
+   
