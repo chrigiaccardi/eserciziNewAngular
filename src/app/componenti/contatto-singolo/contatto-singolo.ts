@@ -6,11 +6,12 @@ import { Firebase } from '../../service/firebase';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 @Component({
   selector: 'app-contatto-singolo',
-  imports: [MatCardModule, MatButtonModule, MatInputModule,MatSelectModule],
+  imports: [MatCardModule, MatButtonModule, MatInputModule,MatSelectModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contatto-singolo.html',
   styleUrl: './contatto-singolo.css',
 })
@@ -22,7 +23,8 @@ export class ContattoSingolo implements OnInit{
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id')!
-      this.personaSingola = this.arrayPersone.persone.find(persona => persona.id === this.id)})
+      this.personaSingola = this.arrayPersone.persone.find(persona => persona.id === this.id)
+    });
   }
 
   onDeletePersona() {
@@ -31,7 +33,8 @@ export class ContattoSingolo implements OnInit{
     })
   }
   mostraForm = false;
-  onCustomPersona() {
-    
+  onPatchPersona() {
+    this.firebase.patchPersona(this.firebase.urlPersone, this.id, {})
+    .subscribe(data => {console.log(data)})
   }
 }

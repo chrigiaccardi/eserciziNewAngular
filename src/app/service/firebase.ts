@@ -21,7 +21,7 @@ export class Firebase {
   deletePersona(url: string, id: string) {
     return this.http.delete(`${url}/${id}.json`)
   }
-  patchPersona() {
-    
+  patchPersona(url: string, id: string, body:{}) {
+    return this.http.patch(`${url}/${id}.json`, body)
   }
 }

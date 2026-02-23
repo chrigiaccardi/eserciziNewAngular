@@ -25,10 +25,6 @@ export class Home implements OnInit{
     });
   }
   
-
-  onSubmit(form: NgForm) {
-    console.log(form)
-  }
   onSubmitR() {
     console.log(this.formreactive)
     this.firebase.insertPersona(this.firebase.urlPersoneJson,

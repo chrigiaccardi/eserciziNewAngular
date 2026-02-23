@@ -20,7 +20,8 @@ export class Contatti implements OnInit{
   
   ngOnInit(): void{
     this.firebase.getPersone(this.firebase.urlPersoneJson).subscribe((data: any) => {
-      this.persone = Object.keys(data).map(key => { return { id: key, ...data[key]} });
+      this.persone = Object.keys(data).map(key => { return { id: key, ...data[key] } });
+      console.log(this.persone)
       this.arrayPersone.persone = this.persone;
     })
   }
