@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class Auth {
   constructor(private http: HttpClient) { }
-  APIKEY= 'AIzaSyCAU2ZI9nXGzmeL92SayCqg-AsfebQPqSA'
+  APIKEY= '1'
   signInUrl: string = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${this.APIKEY}`
   signUpUrl: string = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.APIKEY}`
   isLoggedIn: boolean = true
