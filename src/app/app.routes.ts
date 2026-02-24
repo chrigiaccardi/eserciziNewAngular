@@ -7,6 +7,7 @@ import { ContattoSingolo } from './componenti/contatto-singolo/contatto-singolo'
 import { Notfound404 } from './componenti/notfound404/notfound404';
 import { authGuard } from './service/auth/auth-guard';
 import { Signup } from './componenti/signup/signup';
+import { SignIn } from './componenti/sign-in/sign-in';
 
 
 
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/Homepage' },
     { path: 'Homepage', component: Home },
     { path: 'SignUp', component: Signup },
+    { path: 'SignIn', component: SignIn },
     { path: 'Prova', component: Prova },
     { path: 'Ciao', component: Ciao },
     {path: 'Contatti', component: Contatti, canActivate:[authGuard], children: [
