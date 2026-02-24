@@ -34,7 +34,7 @@ export class ContattoSingolo implements OnInit{
   }
   mostraForm = false;
   onPatchPersona() {
-    this.firebase.patchPersona(this.firebase.urlPersone, this.id, {})
+    this.firebase.patchPersona(this.firebase.urlPersone, this.id, {email:'Ciao@ciao.it'})
     .subscribe(data => {console.log(data)})
   }
 }

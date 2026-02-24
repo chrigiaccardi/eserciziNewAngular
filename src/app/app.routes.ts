@@ -6,12 +6,14 @@ import { Contatti } from './componenti/contatti/contatti';
 import { ContattoSingolo } from './componenti/contatto-singolo/contatto-singolo';
 import { Notfound404 } from './componenti/notfound404/notfound404';
 import { authGuard } from './service/auth/auth-guard';
+import { Signup } from './componenti/signup/signup';
 
 
 
 export const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: '/Homepage' },
     { path: 'Homepage', component: Home },
+    { path: 'SignUp', component: Signup },
     { path: 'Prova', component: Prova },
     { path: 'Ciao', component: Ciao },
     {path: 'Contatti', component: Contatti, canActivate:[authGuard], children: [
